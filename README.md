@@ -41,7 +41,7 @@ Config files, syntax, overall structure, adapters, installation setup, might com
 
 ## Installation Process
 
-Check on the wiki pages
+[Installation and how to use](https://github.com/boxofapps/Universal-Asset-Manager/wiki/Installation-and-how-to-use)
 
 ## History
 I started my journey with asset managers 10+ years ago with the development of HCG Asset Browser (http://www.scriptspot.com/3ds-max/scripts/hcg-asset-browser-pro)
