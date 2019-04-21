@@ -7,7 +7,7 @@ Currently only supports 3ds max.
 
 # What is this solving?
 
-Typically asset managers include the most common asset types for most 3d artists: Models, Materials, Textures, IES, HDRs. They heavily rely on graphic user interfaces tailored to each asset type to help you manage it. Because they rely on graphic user interfaces they are usually not extensible.
+Typically asset managers include the most common asset types for most 3d artists: Models, Materials, Textures, IES, HDRs. They rely on graphic user interfaces to manage different asset types. Because they rely on graphic user interfaces they are usually not extensible.
 
 By fully separating the asset management logic from graphic user interface logic, it becomes much simpler to make an asset manager extensible. With just a few lines of code you can integrate any specific asset type that might be important to your business.
 
