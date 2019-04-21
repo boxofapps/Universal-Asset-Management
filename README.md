@@ -7,17 +7,15 @@ Currently only supports 3ds max.
 
 ## What is this trying to solve?
 
-Typically asset managers include the most common asset types for most 3d artists: Models, Materials, Textures, IES, HDRs. They rely on graphic user interfaces to manage different asset types. Because they rely on graphic user interfaces they are usually not extensible.
+Typically asset managers include the most common asset types for most 3d artists: Models, Materials, Textures, IES, HDRs. They rely on graphic user interfaces to help you manage different asset types. Because they rely on graphic user interfaces they are usually not extensible.
 
 By fully separating the asset management logic from graphic user interface logic, it becomes much simpler to make an asset manager extensible. With just a few lines of code you can integrate any specific asset type that might be important to your business.
 
 Each new asset type is discoverable from your file system and retrievable through the use of simple commands.
 
-I have included asset type example that let you extract color assets from a .csv table. Each color asset can then output proper linear rgb values taking in consideration the LRV(Light reflectance value) supplied by the manufacturer.
+I have included an asset type example that let you extract color assets from a .csv table. Each color asset can then output proper linear rgb values taking in consideration the LRV(Light reflectance value) supplied by the manufacturer.
 
 ## How it works?
-
-After installing it, you can use it through commands
 
 Basic system structure:
 * Scanning File System to find assets
