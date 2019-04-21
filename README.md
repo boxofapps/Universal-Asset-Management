@@ -3,15 +3,17 @@ An extensible asset manager that is fully controllable through simple commands t
 
 You can add as many asset definitions as required with the help of the modular structure.
 
+Currently only supports 3ds max.
+
 # What is this solving?
 
-Typically asset managers include the most common asset types for most 3d artists: Models, Materials, Textures, IES, HDRs. They rely on graphic user interfaces tailored to each asset type to help you manage it. Because they rely heavily on graphyc user interfaces they are usually not extensible.
+Typically asset managers include the most common asset types for most 3d artists: Models, Materials, Textures, IES, HDRs. They heavily rely on graphic user interfaces tailored to each asset type to help you manage it. Because they rely on graphic user interfaces they are usually not extensible.
 
-By fully separating the logic from graphic user interfaces it is much simpler to make an asset manager extensible. You can integrate any specific asset type that might be important to your business with just a few lines of code.
+By fully separating the asset management logic from graphic user interface logic, it becomes much simpler to make an asset manager extensible. With just a few lines of code you can integrate any specific asset type that might be important to your business.
 
-Each new asset type then becomes discorable from your file system and retrievable through the use of commands.
+Each new asset type is discoverable from your file system and retrievable through the use of simple commands.
 
-I have included one example of asset type that let you extract color assets from a .csv table. Each color asset can then output proper linear rgb values taking in consideration the LRV(Light reflectance value) supplied by the manufacturer.
+I have included asset type example that let you extract color assets from a .csv table. Each color asset can then output proper linear rgb values taking in consideration the LRV(Light reflectance value) supplied by the manufacturer.
 
 # How it works?
 
@@ -24,7 +26,7 @@ Basic system structure:
 * Adapters (or importers) that identify asset source files and output asset objects in 3ds max
 * Shared libraries of functions to be used by adapters (that includes my initial work on extracting all the useful functions from HCGAB for public use)
 * API for querying assets found by the system. Example: "boa.uam.get("AssetType:Color,ColorName:*White*")" will return all color assets that has "white" in the name.
-* Per Asset Type objects in 3ds max, so you can perform quick operations with simple commands. Example: "(boa.uam.get("AssetType:Model))[1].merge()" this will merge to the scene the first model it can find.
+* Per Asset Type objects in 3ds max, so you can perform quick operations with simple commands. Example: "(boa.uam.get("AssetType:Model))[1].merge()" will merge the first model it can find to the scene.
 
 # Default Asset Types
 * Models
@@ -38,13 +40,13 @@ Also at the current state there is no caching feature. If you scan a very big as
 Config files, syntax, overall structure, adapters, installation setup, might completely change with each new update.
 
 # History
-I started my jorney with asset managers 10+ years ago with the development of HCG Asset Browser (http://www.scriptspot.com/3ds-max/scripts/hcg-asset-browser-pro)
+I started my journey with asset managers 10+ years ago with the development of HCG Asset Browser (http://www.scriptspot.com/3ds-max/scripts/hcg-asset-browser-pro)
 
 My goal was to reduce the amount of repetitive steps 3d artists had to go through to simply merge a model while also making it easy to see what I was merging.
 
 Since then many great asset browsers have been released following that central idea (Project Manager, Connecter). They have introduced many new features and great UIs. But some of these important new features introduced a whole new level of repetitive steps to keep the library consistent.
 
-With connecter for example, if I want to use Tags to categorize models, I have to make sure all models are consistently tagged, because if I have any considerable inconsistency, the 3d artists will lose confidence and naturally gravitate back to navigating the folder, as they know they can find all of the assets no matter what. Also some folders are already working as a "Tag", the problem is that if you add one new model to that folder, you still have to remember add a tag "Chair" to it. This is one of many problems you have to solve to really push asset management to the next level.
+With connecter for example, if I want to use Tags to categorize models, I have to make sure all models are consistently tagged. If I have too much inconsistency, 3d artists will lose confidence and naturally gravitate back to navigating through folders, as they know that is the place they can find all assets. Also some folders are already working as a "Tag", the problem is that if you add one new model to that folder, you still have to remember add a tag "Chair" to it. This is one of many small problems that as you keep adding to other similar problems makes the whole process too slow to progress.
 
 There is an overlap of what is universal in how most people use assets. Current asset browsers do their best to capture most common feature needs through their UIs. The problem is that if you have a special case that requires a new sort of asset type, then you have to start from scratch, which is not viable for most people.
 
