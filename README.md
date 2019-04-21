@@ -1,11 +1,11 @@
-# Universal-Asset-Manager
+# Universal Asset Manager 
 An extensible asset manager that is fully controllable through simple commands that you can integrate in your own pipeline.
 
 You can add as many asset definitions as required with the help of the modular structure.
 
 Currently only supports 3ds max.
 
-# What is this solving?
+## What is this trying to solve?
 
 Typically asset managers include the most common asset types for most 3d artists: Models, Materials, Textures, IES, HDRs. They rely on graphic user interfaces to manage different asset types. Because they rely on graphic user interfaces they are usually not extensible.
 
@@ -15,7 +15,7 @@ Each new asset type is discoverable from your file system and retrievable throug
 
 I have included asset type example that let you extract color assets from a .csv table. Each color asset can then output proper linear rgb values taking in consideration the LRV(Light reflectance value) supplied by the manufacturer.
 
-# How it works?
+## How it works?
 
 After installing it, you can use it through commands
 
@@ -28,19 +28,25 @@ Basic system structure:
 * API for querying assets found by the system. Example: "boa.uam.get("AssetType:Color,ColorName:*White*")" will return all color assets that has "white" in the name.
 * Per Asset Type objects in 3ds max, so you can perform quick operations with simple commands. Example: "(boa.uam.get("AssetType:Model))[1].merge()" will merge the first model it can find to the scene.
 
-# Default Asset Types
+## Default Asset Types
 * Models
 * RGB LFV CSV Color Table (Example of unusual asset type)
 
-# Early Development Considerations (not production ready)
+## Early Development Considerations (not production ready)
 This tool is not production ready at this stage. I only recommend using it for initial experimentation or if you are planning to contribute to this project.
 
 Also at the current state there is no caching feature. If you scan a very big asset library it might freeze your 3ds max for a long time while it goes through all the folders and files.
 
 Config files, syntax, overall structure, adapters, installation setup, might completely change with each new update.
 
-# History
+## Installation Process
+
+Check on the wiki pages
+
+## History
 I started my journey with asset managers 10+ years ago with the development of HCG Asset Browser (http://www.scriptspot.com/3ds-max/scripts/hcg-asset-browser-pro)
+
+Video of hcgab: https://www.youtube.com/watch?v=wY4Entr3UXY
 
 My goal was to reduce the amount of repetitive steps 3d artists had to go through to simply merge a model while also making it easy to see what I was merging.
 
@@ -51,4 +57,3 @@ With connecter for example, if I want to use Tags to categorize models, I have t
 There is an overlap of what is universal in how most people use assets. Current asset browsers do their best to capture most common feature needs through their UIs. The problem is that if you have a special case that requires a new sort of asset type, then you have to start from scratch, which is not viable for most people.
 
 This tool is universal in the sense that you have a structure that will work as a starting point that help you add, remove or replace any features relevant to your particular workflow. You can add "unlimited" asset definitions to create your own asset management solution.
-
