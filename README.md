@@ -26,9 +26,16 @@ Basic system structure:
 * API for querying assets found by the system. Example: "boa.uam.get("AssetType:Color,ColorName:*White*")" will return all color assets that has "white" in the name.
 * Per Asset Type objects in 3ds max, so you can perform quick operations with simple commands. Example: "(boa.uam.get("AssetType:Model))[1].merge()" will merge the first model it can find to the scene.
 
-## Default Asset Types
+## Current Asset Types
 * Models
 * RGB LFV CSV Color Table (Example of unusual asset type)
+
+In development:
+* Materials (based on material libraries)
+* Texture (single textures)
+* Texture Set (find normal, glossines and other maps that are associated based on typical name conventions and functions that create basic materials plugging all the maps)
+* Timber Floor (asset type that combine textures, materials, geometry modifiers like "Floor Generator", and other relevant properties)
+* More Model Functions (Merge as proxy, convert to proxy, convert back from proxy)
 
 ## Early Development Considerations (not production ready)
 This tool is not production ready at this stage. I only recommend using it for initial experimentation or if you are planning to contribute to this project.
