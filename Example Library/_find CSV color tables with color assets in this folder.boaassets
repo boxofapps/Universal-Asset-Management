@@ -1,0 +1,3 @@
+filter:*.csv
+assetInputType:ColorsCSV
+assetOutputType:Color
