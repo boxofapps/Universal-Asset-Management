@@ -23,7 +23,7 @@ Basic system structure:
 * Config files to describe what files to look for and how they should be processed
 * Adapters (or importers) that identify asset source files and output asset objects in 3ds max
 * Shared libraries of functions to be used by adapters (that includes my initial work on extracting all the useful functions from HCGAB for public use)
-* API for querying assets found by the system. Example: "boa.uam.get("AssetType:Color,ColorName:*White*")" will return all color assets that has "white" in the name.
+* API for querying assets found by the system. Example: "boa.uam.get("AssetType:Color,ColorName:\*White\*")" will return all color assets that have "white" in the name.
 * Per Asset Type objects in 3ds max, so you can perform quick operations with simple commands. Example: "(boa.uam.get("AssetType:Model))[1].merge()" will merge the first model it can find to the scene.
 
 ## Current Asset Types
@@ -53,7 +53,7 @@ I started my journey with asset managers 10+ years ago with the development of H
 
 Video of hcgab: https://www.youtube.com/watch?v=wY4Entr3UXY
 
-My goal was to reduce the amount of repetitive steps 3d artists had to go through to simply merge a model while also making it easy to see what I was merging.
+My goal was to reduce the amount of repetitive steps 3d artists had to go through to simply merge a model while also making it easy to see what was being merged.
 
 Since then many great asset browsers have been released following that central idea (Project Manager, Connecter). They have introduced many new features and great UIs. But some of these important new features introduced a whole new level of repetitive steps to keep the library consistent.
 
